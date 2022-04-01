@@ -1,8 +1,8 @@
-const INITIAL_STATE = {
-  state: '',
+const INITIAL_STATE_USER = {
+  email: '',
 };
 
-const userReducer = (state = INITIAL_STATE, action) => {
+const userReducer = (state = INITIAL_STATE_USER, action) => {
   switch (action.type) {
   default:
     return state;

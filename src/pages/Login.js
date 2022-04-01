@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { addEmailtoStore } from '../actions';
 
 class Login extends React.Component {
   constructor() {
@@ -13,6 +15,7 @@ class Login extends React.Component {
     this.onEmailChange = this.onEmailChange.bind(this);
     this.onPasswordChange = this.onPasswordChange.bind(this);
     this.validateLoginButton = this.validateLoginButton.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
   }
 
   onEmailChange({ target }) {
@@ -44,12 +47,15 @@ class Login extends React.Component {
     }
   }
 
+  /*  handleClick() {
+    const { history, addEmailtoStore } = this.props;
+    const { email } = this.state;
+    addEmailtoStore(email);
+    history.push('/carteira');
+  } */
+
   render() {
     const { email, password, isButtonDisabled } = this.state;
-    const handleClick = () => {
-      const { history } = this.props;
-      history.push('/carteira');
-    };
 
     return (
 
@@ -72,7 +78,7 @@ class Login extends React.Component {
         />
         <button
           type="button"
-          onClick={ this.handleClick }
+          // onClick={ this.handleClick }
           disabled={ isButtonDisabled }
         >
           Entrar
@@ -84,9 +90,14 @@ class Login extends React.Component {
 }
 
 Login.propTypes = {
+  // addEmailtoStore: PropTypes.func.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
 };
 
-export default Login;
+const mapDispatchToProps = (dispatch) => ({
+  email: (stateEmail) => dispatch(addEmailtoStore(stateEmail)),
+});
+
+export default connect(null, mapDispatchToProps)(Login);
