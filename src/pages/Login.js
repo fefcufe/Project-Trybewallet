@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addEmailtoStore } from '../actions';
+import { addEmail } from '../actions';
 
 class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      email: '',
+      componentStatemail: '',
       password: '',
       isButtonDisabled: true,
     };
@@ -15,13 +15,13 @@ class Login extends React.Component {
     this.onEmailChange = this.onEmailChange.bind(this);
     this.onPasswordChange = this.onPasswordChange.bind(this);
     this.validateLoginButton = this.validateLoginButton.bind(this);
-    // this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   onEmailChange({ target }) {
     const { value } = target;
     this.setState({
-      email: value,
+      componentStatemail: value,
     }, this.validateLoginButton);
   }
 
@@ -35,9 +35,9 @@ class Login extends React.Component {
   validateLoginButton() {
     // Regular expression obtida de https://stackoverflow.com/questions/46155/whats-the-best-way-to-validate-an-email-address-in-javascript
 
-    const { email, password } = this.state;
+    const { componentStatemail, password } = this.state;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const emailValidation = emailRegex.test(email);
+    const emailValidation = emailRegex.test(componentStatemail);
     const maxPasswordLength = 6;
     const passwordValidation = password.length >= maxPasswordLength;
     if (emailValidation && passwordValidation) {
@@ -47,15 +47,15 @@ class Login extends React.Component {
     }
   }
 
-  /*  handleClick() {
+  handleClick() {
     const { history, addEmailtoStore } = this.props;
-    const { email } = this.state;
-    addEmailtoStore(email);
+    const { componentStatemail } = this.state;
+    addEmailtoStore(componentStatemail);
     history.push('/carteira');
-  } */
+  }
 
   render() {
-    const { email, password, isButtonDisabled } = this.state;
+    const { componentStatemail, password, isButtonDisabled } = this.state;
 
     return (
 
@@ -65,7 +65,7 @@ class Login extends React.Component {
           data-testid="email-input"
           placeholder="email"
           onChange={ this.onEmailChange }
-          value={ email }
+          value={ componentStatemail }
           type="email"
         />
 
@@ -78,7 +78,7 @@ class Login extends React.Component {
         />
         <button
           type="button"
-          // onClick={ this.handleClick }
+          onClick={ this.handleClick }
           disabled={ isButtonDisabled }
         >
           Entrar
@@ -90,14 +90,14 @@ class Login extends React.Component {
 }
 
 Login.propTypes = {
-  // addEmailtoStore: PropTypes.func.isRequired,
+  addEmailtoStore: PropTypes.func.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  email: (stateEmail) => dispatch(addEmailtoStore(stateEmail)),
+  addEmailtoStore: (stateEmail) => dispatch(addEmail(stateEmail)),
 });
 
 export default connect(null, mapDispatchToProps)(Login);

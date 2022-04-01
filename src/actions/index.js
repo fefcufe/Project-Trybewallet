@@ -1,6 +1,6 @@
 // Coloque aqui suas actions
 
-export const addEmailtoStore = (stateEmail) => ({
+export const addEmail = (stateEmail) => ({
   type: 'ADD_EMAIL',
   email: stateEmail,
 });

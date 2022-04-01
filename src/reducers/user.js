@@ -4,6 +4,11 @@ const INITIAL_STATE_USER = {
 
 const userReducer = (state = INITIAL_STATE_USER, action) => {
   switch (action.type) {
+  case 'ADD_EMAIL':
+    return {
+      ...state,
+      email: action.email,
+    };
   default:
     return state;
   }
