@@ -49,7 +49,7 @@ class Wallet extends React.Component {
             </select>
 
             <select data-testid="tag-input">
-              <oprion> Alimentação </oprion>
+              <option> Alimentação </option>
               <option> Lazer </option>
               <option> Trabalho </option>
               <option> Transporte </option>
