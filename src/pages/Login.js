@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addEmail } from '../actions';
+import { addEmail, fetchCurrencies } from '../actions';
 
 class Login extends React.Component {
   constructor() {
@@ -102,6 +102,7 @@ Login.propTypes = {
 
 const mapDispatchToProps = (dispatch) => ({
   addEmailtoStore: (stateEmail) => dispatch(addEmail(stateEmail)),
+  addCurrenciesToStore: () => dispatch(fetchCurrencies()),
 });
 
 export default connect(null, mapDispatchToProps)(Login);
