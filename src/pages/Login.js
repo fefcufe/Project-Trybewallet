@@ -44,6 +44,10 @@ class Login extends React.Component {
       this.setState({
         isButtonDisabled: false,
       });
+    } else {
+      this.setState({
+        isButtonDisabled: true,
+      });
     }
   }
 

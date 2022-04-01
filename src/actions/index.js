@@ -5,6 +5,7 @@ export const addEmail = (stateEmail) => ({
   email: stateEmail,
 });
 
-export const addSeiLa = () => ({
-  type: 'ADD_ALGUMA_COISA',
+export const currenciesAction = () => ({
+  type: 'ADD_CURRENCIES',
+  currencies,
 });
