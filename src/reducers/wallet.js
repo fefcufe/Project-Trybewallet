@@ -10,6 +10,11 @@ const walletReducer = (state = INITIAL_STATE, action) => {
       ...state,
       currencies: action.currencies, // action deve ter chave currencies com o resultado da API
     };
+  case 'SUBMIT_ACTION':
+    return {
+      ...state,
+      expenses: [...state.expenses, action.expenses],
+    };
   default:
     return state;
   }

@@ -29,3 +29,8 @@ export function fetchCurrencies() {
       });
   };
 }
+
+export const submitAction = (expenses) => ({
+  type: 'SUBMIT_ACTION',
+  expenses,
+});
