@@ -34,3 +34,8 @@ export const submitAction = (expenses) => ({
   type: 'SUBMIT_ACTION',
   expenses,
 });
+
+export const deleteExpenseAction = (id) => ({
+  type: 'DELETE_EXPENSE',
+  id,
+});
