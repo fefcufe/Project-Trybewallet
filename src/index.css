@@ -11,3 +11,44 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --main-color: #ececec;
+  --secondary-color: #181725;
+  --accent-color: #12e497;
+  --azul: #006dfb;
+  --roxo: #41197f;
+}
+
+::selection {
+  background-color: var(--accent-color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 24px;
+}
+
+#hello {
+  margin-top: 20px;
+}
+
+.app-container {
+  display: flex;
+  align-items: center;
+  align-content: space-around;
+  justify-content: center;
+  
+}
+
+#imagem-carteira {
+  width: 60px;
+  height: 70px;
+}

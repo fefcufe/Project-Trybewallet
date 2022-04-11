@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addEmail, fetchCurrencies } from '../actions';
+import styles from './Login.module.css';
 
 class Login extends React.Component {
   constructor() {
@@ -63,30 +64,43 @@ class Login extends React.Component {
 
     return (
 
-      <div className="login">
-        <h3>Login</h3>
-        <input
-          data-testid="email-input"
-          placeholder="email"
-          onChange={ this.onEmailChange }
-          value={ componentStatemail }
-          type="email"
-        />
+      <div className={ styles.login_container }>
 
-        <input
-          data-testid="password-input"
-          placeholder="password"
-          onChange={ this.onPasswordChange }
-          value={ password }
-          type="password"
-        />
-        <button
-          type="button"
-          onClick={ this.handleClick }
-          disabled={ isButtonDisabled }
-        >
-          Entrar
-        </button>
+        <div className={ styles.login_wrapper }>
+          <h3>Login</h3>
+          <label htmlFor="email_input" className={ styles.label_input }>
+            <input
+              data-testid="email-input"
+              placeholder="email"
+              onChange={ this.onEmailChange }
+              value={ componentStatemail }
+              type="email"
+              className={ styles.input }
+              id="email_input"
+            />
+          </label>
+
+          <label className={ styles.label_input } htmlFor="password_input">
+            <input
+              data-testid="password-input"
+              placeholder="senha"
+              onChange={ this.onPasswordChange }
+              value={ password }
+              type="password"
+              className={ styles.input }
+              id="password_input"
+            />
+          </label>
+
+          <button
+            type="button"
+            onClick={ this.handleClick }
+            disabled={ isButtonDisabled }
+            id={ styles.login_button }
+          >
+            Entrar
+          </button>
+        </div>
 
       </div>
     );

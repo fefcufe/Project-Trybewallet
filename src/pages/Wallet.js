@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchCurrencies, submitAction } from '../actions';
 import ExpensesTable from '../components/ExpensesTable';
+import styles from './Wallet.module.css';
 
 // erro, ao adicionar despesa a despesa está sendo sobrescrita ao invés de adicionada
 // chamar dentro do map de expenses a função que atualiza o total baseado em expenses
@@ -92,11 +93,30 @@ class Wallet extends React.Component {
       methodState, tagState } = this.state;
     return (
       <div>
-        <header data-testid="email-field">{ email }</header>
-        TrybeWallet
-        <form name="expense-form">
+        <div className={ styles.header_container }>
+          <header>
+            <h2>Bem-Vindo ao TrybeWallet</h2>
+            <div className={ styles.header_items }>
 
-          <fieldset>
+              <span data-testid="email-field">
+                Email:
+                { email }
+              </span>
+
+              <span className={ styles.header_item_expenses }>Total:</span>
+              <span data-testid="total-field" name="total" id="total">
+                { this.updateTotal() }
+              </span>
+              <span data-testid="header-currency-field">
+                BRL
+              </span>
+            </div>
+          </header>
+        </div>
+
+        <form name="expense-form" className={ styles.form_container }>
+
+          <fieldset className={ styles.fieldset }>
             <label htmlFor="expense-value">
               Valor:
               <input
@@ -120,7 +140,7 @@ class Wallet extends React.Component {
             </label>
 
             <label name="Moeda" htmlFor="select-moeda">
-              Moeda
+              Moeda:
               <select
                 id="select-moeda"
                 onChange={ this.handleChange }
@@ -160,18 +180,20 @@ class Wallet extends React.Component {
               <option value="Saúde"> Saúde </option>
             </select>
 
+            <button
+              type="button"
+              onClick={ this.handleClick }
+              className={ styles.add_expense_button }
+            >
+              Adicionar despesa
+            </button>
+
           </fieldset>
-          <button type="button" onClick={ this.handleClick }>Adicionar despesa</button>
+
         </form>
 
         <ExpensesTable />
 
-        <div data-testid="total-field" name="total">
-          { this.updateTotal() }
-        </div>
-        <div data-testid="header-currency-field">
-          BRL
-        </div>
       </div>);
   }
 }

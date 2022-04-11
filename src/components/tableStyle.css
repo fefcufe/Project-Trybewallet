@@ -1,0 +1,32 @@
+.div-table {
+    display:flex;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: var(--accent-color);
+}
+
+table {
+  border-collapse: collapse;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.664);
+  font-family: sans-serif;
+  font-size: 0.9em;
+  margin: 25px 10px;
+  width: 100%;
+  background-color: var(--main-color);
+}
+
+td {
+    padding:12px 15px;
+    text-align: center;
+}
+
+tr {
+    border-bottom: 2px solid var(--secondary-color);
+    border-radius: 10;
+}
+
+tr:hover {
+    cursor: pointer;
+    opacity: 1.0;
+    transition: 0.3;
+}
