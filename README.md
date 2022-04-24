@@ -11,7 +11,7 @@ facilitou muito o manuseio de dados entre os componentes ao possibilitar a centr
 
 ## Demo
 
-![Demo](video-demo/trybewallet.gif)
+![Demo](src/video-demo/trybewallet.gif)
 
 ## Técnologias usadas
 
@@ -24,16 +24,12 @@ Back-end:
 
 ## Instalando Dependências
 
-> Backend
 ```bash
 cd Project-Trybewallet/ 
 npm install
 ``` 
-> Frontend
-```bash
-cd src/
-npm install
-``` 
+
+
 ## Executando aplicação
 
 * Para rodar:
