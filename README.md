@@ -2,7 +2,7 @@
 
 
 ## Demo
-![Demo](video-demo/video-trubewallet.gif)
+![Demo](videodemo/videoTrybewallet.gif)
 
 # Descrição
 Esse foi um dos projetos desenvolvidos no módulo de Front-End na Trybe, o TrybeWallet .Este projeto trata-se de uma ferramenta de carteira virtual, na qual o usuário poderia adicionar/excluir/editar 
