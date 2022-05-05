@@ -10,7 +10,7 @@ gastos e ter seu valor convertido em real através de dados obtidos de uma API d
 Após termos aprendido sobre componentização, estado e ciclo de vida de componentes usando React, aprendemos Redux para esse projeto o que
 facilitou muito o manuseio de dados entre os componentes ao possibilitar a centralização desses em um estado global.
 
-## Técnologias usadas
+## Tecnologias usadas
 
 Front-end:
 > Desenvolvido usando: React, Redux, CSS3, HTML5, ES6
